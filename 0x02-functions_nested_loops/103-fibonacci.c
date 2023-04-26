@@ -1,27 +1,24 @@
-#include"main.h"
+#include <stdio.h>
 /**
- * main - Entry point
- * Description: "Print even-valued sum"
- * Return: Always 0 (Success)
+ *main - print first 50 fibonacci
+ *
+ *Return: 0 always.
  */
 int main(void)
 {
-	unsigned long fib1 = 0, fib2 = 1, sum;
-	float total_sum;
+	long int i, x = 1, y = 2, sum = 0, tSum = 0;
 
-	while (1)
+	for (i = 0; i < 49; i++)
 	{
-		sum = fib1 + fib2;
+		if ((y % 2 == 0) && (y <= 4000000))
+		{
+			tSum = tSum + y;
+		}
+		sum = x + y;
+		x = y;
+		y = sum;
 
-		if (sum > 4000000)
-			break;
-
-		if ((sum % 2) == 0)
-			total_sum += sum;
-
-		fib1 = fib2;
-		fib2 = sum;
 	}
-	printf("%.0f\n", total_sum);
-
-	ret
+	printf("%ld\n", tSum);
+	return (0);
+}

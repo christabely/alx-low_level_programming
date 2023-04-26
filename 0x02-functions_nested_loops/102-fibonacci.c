@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
- *main - input first 50 fibonacci
+ *main - print first 50 fibonacci
+ *
  *Return: 0 always.
  */
 int main(void)
@@ -21,3 +22,6 @@ int main(void)
 		else
 			printf(", ");
 	}
+
+	return (0);
+}
