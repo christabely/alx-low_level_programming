@@ -6,12 +6,19 @@
  */
 void print_square(int size)
 {
-	int row, column;
+	int i = 1;
 
-	for (row = 1; row <= size; ++row)
+	for (; i < 100 ; i++)
 	{
-		for (column = 1; column <= size; ++column)
-			_putchar('#');
-		_putchar('\n');
+		if (i % 3 == 0 && i % 5 == 0)
+			printf("FizzBuzz ");
+		else if (i % 3 == 0)
+			printf("Fizz ");
+		else if (i % 5 == 0)
+			printf("Buzz ");
+		else
+			printf("%d ", i);
 	}
+	printf("Buzz\n");
+	return (0);
 }
