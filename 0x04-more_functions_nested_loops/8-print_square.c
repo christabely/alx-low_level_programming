@@ -1,24 +1,29 @@
-#include"main.h"
+#include "main.h"
 /**
- * print_square - "prints a square"
- * @size: size of the square
- * Return: Always 0
+ * print_square - draws a square
+ * @size: print size
+ *
+ * Return: 0 Always
  */
 void print_square(int size)
 {
-	int i = 1;
+	int row;
 
-	for (; i < 100 ; i++)
+	int column;
+
+	if (size > 0)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
-			printf("FizzBuzz ");
-		else if (i % 3 == 0)
-			printf("Fizz ");
-		else if (i % 5 == 0)
-			printf("Buzz ");
-		else
-			printf("%d ", i);
+		for (row = 0; row < size; row++)
+		{
+			for (column = 0; column < size; column++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
+		}
 	}
-	printf("Buzz\n");
-	return (0);
+	else
+	{
+		_putchar('\n');
+	}
 }
