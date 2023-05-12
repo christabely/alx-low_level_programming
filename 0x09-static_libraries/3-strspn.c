@@ -1,27 +1,32 @@
+#include "main.h"
 /**
-* _strspn - prefix substring lenght
-* @s: String for subtraction
-* @accept: Substring to match
-* Return: integer
-*/
-
+ * _strspn - prints length of substring
+ * @s: pointer to string
+ * @accept: substring
+ * Return: number of bytes in segment
+ */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int d = 0;
+	int i, j, f;
 
-	char *j = accept;
-
-	while (*s++)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		while (*accept++)
-			if (*(s - 1) == *(accept - 1))
+		j = 0;
+		f = 1; /*flag status*/
+		while (accept[j] != '\0')
+		{
+			if (s[i] == accept[j])
 			{
-				d++;
+				f = 0; /*success*/
 				break;
 			}
-		if (!(*--accept))
+			j++;
+		}
+		if (f == 1)
 			break;
-		accept = j;
+		i++;
 	}
-	return (d);
+
+	return (i);
 }

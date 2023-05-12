@@ -1,20 +1,36 @@
 #include "main.h"
 /**
- * _strcmp - compares double strings
- * @s1: string one
- * @s2: string two
- * Return: int
+ * _strcmp - compares two strings
+ * @s1: string
+ * @s2: second string
+ * Return: 0 else negative or positive nteger
  */
 int _strcmp(char *s1, char *s2)
 {
-	int i = 0, vf = 0;
+	int i = 0, diff = 0;
 
-	while (vf == 0)
+	while (1)
 	{
-		if ((*(s1 + i) == '\0') && (*(s2 + i) == '\0'))
+		if (s1[i] == '\0' && s2[i] == '\0')
 			break;
-		vf = *(s1 + i) - *(s2 + i);
-		i++;
+		else if (s1[i] == '\0')
+		{
+			diff = s2[i];
+			break;
+		}
+		else if (s2[i] == '\0')
+		{
+			diff = s1[i];
+			break;
+		}
+		else if (s1[i] != s2[i])
+		{
+			diff = s1[i] - s2[i];
+			break;
+		}
+		else
+			i++;
+
 	}
-	return (vf);
+	return (diff);
 }

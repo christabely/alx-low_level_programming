@@ -3,7 +3,7 @@
  * _atoi - converts string to integer
  * @s: string input parameter
  * Return: integer
-*/
+ */
 int _atoi(char *s)
 {
 	unsigned int num = 0;
