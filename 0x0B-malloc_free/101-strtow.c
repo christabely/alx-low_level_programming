@@ -1,87 +1,64 @@
+#include "main.h"
 #include <stdlib.h>
 /**
- * wordcount - string wordcount
- * @str: string
- * Return: word count
- */
-int wordcount(char *str)
-{
-	int w = 0;
-
-	while (*str != '\0')
-	{
-		if (*str == ' ')
-			str++;
-		else
-		{
-			while (*str != ' ' && *str != '\0')
-				str++;
-			w++;
-		}
-	}
-	return (w);
-}
-
-/**
- * free_array - array 1
- * @ar: array 2
- * @i: array
+ * ch_free_grid - array
+ * @grid: array of char
+ * @height: height
  * Return: void
-*/
-void free_array(char **ar, int i)
+ */
+void ch_free_grid(char **grid, unsigned int height)
 {
-	if (ar != NULL && i != 0)
+	if (grid != NULL && height != 0)
 	{
-		while (i >= 0)
-		{
-			free(ar[i]);
-			i--;
-		}
-		free(ar);
+		for (; height > 0; height--)
+			free(grid[height]);
+		free(grid[height]);
+		free(grid);
 	}
 }
 
 /**
  * strtow - string
- * @str: array
- * Return: void
-*/
+ * @str: string
+ * Return: pointer array
+ */
 char **strtow(char *str)
 {
-	int i, s, k, u, w;
-	char **t;
+	char **guot;
+	unsigned int c, height, i, k, a1;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-
-	u = wordcount(str);
-	t = malloc((u + 1) * sizeof(char *));
-	if (u == 0 || t == NULL)
-		return (NULL);
-
-	for (i = s = 0; i < u; i++)
+	for (c = height = 0; str[c] != '\0'; c++)
+		if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
+			height++;
+	guot = malloc((height + 1) * sizeof(char *));
+	if (guot == NULL || height == 0)
 	{
-		for (w = s; u[w] != '\0'; w++)
+		free(guot);
+		return (NULL);
+	}
+	for (i = a1 = 0; i < height; i++)
+	{
+		for (c = a1; str[c] != '\0'; c++)
 		{
-			if (str[w] == ' ')
-				s++;
-
-			if (str[w] != ' ' && (str[w + 1] == ' ' || str[w + 1] == '\0'))
+			if (str[c] == ' ')
+				a1++;
+			if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
 			{
-				t[i] = malloc((w - s + 2) * sizeof(char));
-				i(t[i] == NULL)
+				guot[i] = malloc((c - a1 + 2) * sizeof(char));
+				if (guot[i] == NULL)
 				{
-					free_array(t, i);
+					ch_free_grid(guot, i);
 					return (NULL);
 				}
 				break;
 			}
 		}
-
-		for (k = 0; s <= w; s++, k++)
-			t[i][k] = str[s];
-		t[i][k] = '\0';
+		for (k = 0; a1 <= c; a1++, k++)
+			guot[i][k] = str[a1];
+		guot[i][k] = '\0';
 	}
-	t[i] = NULL;
-	return (t);
+	guot[i] = NULL;
+	return (guot);
 }
