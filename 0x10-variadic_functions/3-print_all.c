@@ -1,13 +1,13 @@
 #include "variadic_functions.h"
 /**
- * print_all - prints all
- * @format: argument type
- * Return: 0 success
+ * print_all - prints anything
+ * @format: arguments passed
+ * Return: no return
  */
 void print_all(const char * const format, ...)
 {
 	va_list valist;
-	unsigned int k = 0, j, c = 0;
+	unsigned int i = 0, j, c = 0;
 	char *str;
 	const char t_arg[] = "cifs";
 
@@ -17,18 +17,18 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (t_arg[j])
 		{
-			if (format[k] == t_arg[j] && c)
+			if (format[i] == t_arg[j] && c)
 			{
 				printf(", ");
 				break;
 			} j++;
 		}
-		switch (format[k])
+		switch (format[i])
 		{
 		case 'c':
 			printf("%c", va_arg(valist, int)), c = 1;
 			break;
-		case 'k':
+		case 'i':
 			printf("%d", va_arg(valist, int)), c = 1;
 			break;
 		case 'f':
@@ -43,7 +43,7 @@ void print_all(const char * const format, ...)
 			}
 			printf("%s", str);
 			break;
-		} k++;
+		} i++;
 	}
 	printf("\n"), va_end(valist);
 }
