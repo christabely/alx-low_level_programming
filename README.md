@@ -1,14 +1,11 @@
 ![21b4fc5c1b5df84e6ae4fe8807aa359d929e748a](https://github.com/christabely/alx-low_level_programming/assets/129256391/fe7094f6-3c39-46a0-a159-8f1992f569f0)
 
-⭐️⭐️ MAGIC ⭐️⭐️ happens with C
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=⭐️⭐️+Magic+Happens+with+C+⭐️⭐️;)](https://git.io/typing-svg)
 
 CONCEPTS TO LOOK AT;
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Read This
-
 
 - [e0ccf91eec6b977a9e00ed384dc285df9c2772e3.pdf](https://github.com/christabely/alx-low_level_programming/files/12229197/e0ccf91eec6b977a9e00ed384dc285df9c2772e3.pdf)
-- 
-https://en.wikipedia.org/wiki/Dennis_Ritchie
+- https://en.wikipedia.org/wiki/Dennis_Ritchie
 - https://youtu.be/de2Hsvxaf8M
 - https://youtu.be/smGalmxPVYc
 - https://youtu.be/rk2fK2IIiiQ
@@ -19,9 +16,9 @@ https://en.wikipedia.org/wiki/Dennis_Ritchie
 - http://harmful.cat-v.org/software/c++/linus
 
 BETTY LINTER
-To run the Betty linter just with command betty <filename>:
+- To run the Betty linter just with command betty <filename>:
 
-Go to the Betty repository
+- Go to the Betty repository
 Clone the repo to your local machine
 cd into the Betty directory
 Install the linter with sudo ./install.sh
