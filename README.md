@@ -3,6 +3,9 @@
 ⭐️⭐️ MAGIC ⭐️⭐️ happens with C
 
 CONCEPTS TO LOOK AT;
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Read This
+
+
 - [e0ccf91eec6b977a9e00ed384dc285df9c2772e3.pdf](https://github.com/christabely/alx-low_level_programming/files/12229197/e0ccf91eec6b977a9e00ed384dc285df9c2772e3.pdf)
 - 
 https://en.wikipedia.org/wiki/Dennis_Ritchie
