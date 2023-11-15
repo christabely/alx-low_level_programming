@@ -1,0 +1,1 @@
+sol to serch algorthm
